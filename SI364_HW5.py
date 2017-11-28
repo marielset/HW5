@@ -36,14 +36,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 587 #default
 app.config['MAIL_USE_TLS'] = True
-#app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME') # TODO export to your environs -- may want a new account just for this. It's expecting gmail, not umich
-#app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
-app.config['MAIL_USERNAME'] = 'marielse4321@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Mynameismariel'
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME') # TODO export to your environs -- may want a new account just for this. It's expecting gmail, not umich
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 app.config['MAIL_SUBJECT_PREFIX'] = '[HW5]'
 app.config['MAIL_SENDER'] = 'Admin <marielse4321@gmail.com>' 
-#app.config['ADMIN'] = os.environ.get('ADMIN')
-app.config['ADMIN'] = 'marielse4321@gmail.com'
+app.config['ADMIN'] = os.environ.get('ADMIN')
 
 # Set up Flask debug stuff
 manager = Manager(app)
