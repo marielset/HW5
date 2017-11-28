@@ -190,7 +190,7 @@ def index():
     num_tweets = len(tweets)
     form = TweetForm()
     if form.validate_on_submit():
-        if db.session.query(Tweet).filter_by(text=form.text.data, user_id= (get_or_create_user(db.session, form.username.data).id)).first():
+        if db.session.query(Tweet).filter_by(text=form.text.data, user_id= (get_or_create_user(db.session, form.username.data, form.email.data).id)).first():
             flash("You've already saved that tweet by this user!")
         else:
             get_or_create_tweet(db.session, form.text.data, form.username.data, form.email.data)
